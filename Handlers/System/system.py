@@ -6,19 +6,21 @@ def write_file(path: str, data: bytes):
     with open(path, "wb") as file:
         file.write(data)
 
-def check_folder(path: str, msg: Message, i: int):
+def check_folder(path: str):
     if os.path.exists(path) == False:
         os.mkdir(path)
-    save_data(path, msg, i+1)
 
 def save_data(path: str, msg: Message, i: int):
     if i == YEAR:
-        check_folder(path + msg.date.year, msg, YEAR)
+        check_folder(path + msg.date.year)
+        save_data(path + msg.date.year, msg, MONTH)
         return
     if i == MONTH:
-        check_folder(path + msg.date.month, msg, MONTH)
+        check_folder(path + msg.date.month)
+        save_data(path + msg.date.month, msg, DAY)
         return
     if i == DAY:
-        check_folder(path + msg.date.day, msg, DAY)
+        check_folder(path + msg.date.day)
+        save_data(path + msg.date.day, msg, DAY+1)
         return
     write_file(path+msg.filename, msg.data)
