@@ -33,11 +33,11 @@ def create_server():
     ip = local_ip()
     app.run(host=ip, port=PORT)
 
-def handle_path_btn():
+def handle_path_label():
     global BASE_PATH
     BASE_PATH = filedialog.askdirectory()
     BASE_PATH += "/"
-    path_btn.configure(text=BASE_PATH)
+    path_label.configure(text=BASE_PATH)
 
 def handle_thread():
     server_thread = threading.Thread(target=create_server)
@@ -63,20 +63,21 @@ def videos():
 
 
 window = tkinter.Tk(screenName="PhotoSync")
-window.configure(bg="red")
-window.geometry("420x150")
+window.configure(bg="black")
+window.geometry("420x140")
 window.title("PhotoSync")
+window.iconbitmap("./photo.ico")
 
 # UI Components
-ip_btn = tkinter.Button(window, text=IP_ADDRESS, command=None)
-select_folder_btn = tkinter.Button(window, text="Select Folder", command=handle_path_btn)
-path_btn = tkinter.Button(window, text=BASE_PATH, command=None)
-server_btn = tkinter.Button(window, text="Create Server", command=handle_thread)
+ip_label = tkinter.Label(window, text=IP_ADDRESS, bg="black", fg='white')
+path_label = tkinter.Label(window, text=BASE_PATH, bg="black", fg='white')
+select_folder_btn = tkinter.Button(window, text="Select Folder", command=handle_path_label, bg="black")
+server_btn = tkinter.Button(window, text="Create Server", command=handle_thread, bg="black")
 
 # Render Components
-path_btn.pack()
+path_label.pack()
 select_folder_btn.pack()
-ip_btn.pack()
+ip_label.pack()
 server_btn.pack()
 
 # Threads
