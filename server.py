@@ -1,7 +1,7 @@
 import tkinter
 from tkinter import filedialog
 from flask import Flask, request
-from Requests.Get.IP.localip import get_local_ip
+from Requests.Get.localip import get_local_ip
 from Requests.Post.msg import Message
 from Handlers.System.system import save_data
 import threading
