@@ -8,6 +8,7 @@ The server will focused on get the images and videos from the smartphone and the
 You can create a PhotoSync Server following this steps:
 1. You have to download this Desktop App (PhotoSync Server)
 2. Open the PhotoSync Server App.
+
 ![PhotoSync Server Open](https://i.ibb.co/Vp8jpjZ/Captura-de-pantalla-2023-08-09-a-la-s-10-33-32.png)
 
 3. Select the folder where you want to store your images and videos.
