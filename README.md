@@ -28,12 +28,30 @@ Yes, you can clone this repo and run the server without problems.
 git clone https://github.com/facundocarballo/photo-sync-server.git
 ```
 2. In the terminal, go to where you allocate this repo.
-3. Check if you have python3 installed
+
+3. Check if you have python installed
 ```bash
 python3 --version
+# or
+python --version
 ```
 > If you don't have python3 installed, you have to install it to run this server.
-4. Run this command
+4. Install all the dependencies needed
+    1. Flask Framework to build the API
+    ```bash
+    pip3 install flask
+    # or
+    pip install flask
+    ```
+    2. Netifaces to get the Local IP Address of your computer
+    ```bash
+    pip3 install netifaces
+    # or
+    pip install netifaces
+    ```
+5. Run this command
 ```bash
 python3 server.py
+# or
+python server.py
 ```
