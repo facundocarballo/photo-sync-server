@@ -71,8 +71,8 @@ window.iconbitmap("./photo.ico")
 # UI Components
 ip_label = tkinter.Label(window, text=IP_ADDRESS, bg="black", fg='white')
 path_label = tkinter.Label(window, text=BASE_PATH, bg="black", fg='white')
-select_folder_btn = tkinter.Button(window, text="Select Folder", command=handle_path_label, bg="black")
-server_btn = tkinter.Button(window, text="Create Server", command=handle_thread, bg="black")
+select_folder_btn = tkinter.Button(window, text="Select Folder", command=handle_path_label)
+server_btn = tkinter.Button(window, text="Create Server", command=handle_thread)
 
 # Render Components
 path_label.pack()
